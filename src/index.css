@@ -6,3 +6,25 @@
   --font-inter: 'Inter', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
 }
+
+.sun {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border-radius: 50%;
+  z-index: 0;
+  animation: rays 4s ease-in-out forwards;
+  margin-top: -100px;
+  margin-right: -100px;
+}
+
+@keyframes rays {
+  0% {
+    box-shadow: none;
+  }
+  100%{
+    box-shadow: 0 0 40px yellow,
+                0 0 120px yellow,
+                0 0 500px yellow;
+  }
+}

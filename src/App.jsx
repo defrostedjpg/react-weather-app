@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="h-screen w-full text-neutral-50 font-inter">
-        <div className="flex flex-row bg-sky-300 h-1/3 w-full">
+        <div className="flex flex-row bg-[#5d9ce6] h-1/3 w-full">
           <div className="h-full w-full flex flex-col items-start justify-center px-6 gap-10 pt-10">
             <div>
               <div className="flex flex-row justify-start items-center">
@@ -55,7 +55,7 @@ function App() {
             <p className="text-xs opacity-70 text-left ">Today 25 Jul</p>
           </div>
 
-          <div className="bg-emerald-500 w-full h-full flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center">
             <div class="sun"></div>
           </div>
         </div>
