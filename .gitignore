@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+.env
+.env.*.local  # Matches .env.development.local, .env.production.local etc.
+.env.local    # Specific for local environment variables
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
