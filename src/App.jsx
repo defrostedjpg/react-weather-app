@@ -1,20 +1,23 @@
 import "./index.css";
 import "./App.css";
 import { Progress } from "@/components/ui/progress";
+import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { TrendingUp } from "lucide-react";
+import { chartData } from "@/lib/chartdata";
+import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 import { useState, useEffect } from "react";
 import NumberFlow from "@number-flow/react";
 
 function App() {
-
   function ExtraData({ title, value }) {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
       setTimeout(() => {
         setProgress(Math.random() * 100);
-      }, 100)
-    }, [])
-    
+      }, 100);
+    }, []);
+
     return (
       <div className="bg-neutral-0 h-2/3 rounded-3xl text-neutral-800">
         <div className="text-start">
@@ -26,7 +29,7 @@ function App() {
           />
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -87,15 +90,47 @@ function App() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 px-8 py-7 gap-7 sm:grid-cols-4">
-          <ExtraData title="Feels like" value="30°" />
-          <ExtraData title="Wind" value="8 km/h" />
-          <ExtraData title="Humidity" value="40%" />
-          <ExtraData title="UV Index" value="12" />
-          <ExtraData title="Precipitation" value="1.4 cm" />
-          <ExtraData title="Pressure" value="1012 hPa" />
-          <ExtraData title="Visibility" value="17.2 km" />
-          <ExtraData title="Sunrise" value="07:19" />
+        <div>
+          <ChartContainer
+            config={{
+              value: {
+                label: "Temperature",
+                color: "hsl(var(--chart-1))",
+              },
+            }}
+            className="h-[200px]"
+          >
+            <AreaChart data={chartData} margin={{ right: 10, left: 10 }}>
+              <CartesianGrid vertical={false} />
+              <XAxis
+                dataKey="time"
+                tickLine={false}
+                axisLine={false}
+                tickMargin={2}
+                tickFormatter={(value) =>
+                  value === "Now" ? value : `${value}`
+                }
+              />
+              <Area
+                type="linear"
+                dataKey="value"
+                fill="var(--color-value)"
+                fillOpacity={0.5}
+                stroke="var(--color-value)"
+              />
+            </AreaChart>
+          </ChartContainer>
+
+          <div className="grid grid-cols-3 px-8 py-7 gap-7 sm:grid-cols-4">
+            <ExtraData title="Feels like" value="30°" />
+            <ExtraData title="Wind" value="8 km/h" />
+            <ExtraData title="Humidity" value="40%" />
+            <ExtraData title="UV Index" value="12" />
+            <ExtraData title="Precipitation" value="1.4 cm" />
+            <ExtraData title="Pressure" value="1012 hPa" />
+            <ExtraData title="Visibility" value="17.2 km" />
+            <ExtraData title="Sunrise" value="07:19" />
+          </div>
         </div>
       </div>
     </>
