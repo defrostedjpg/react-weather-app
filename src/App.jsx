@@ -1,12 +1,9 @@
 import "./index.css";
 import "./App.css";
 import { Progress } from "@/components/ui/progress";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
-import { TrendingUp } from "lucide-react";
-import { chartData } from "@/lib/chartdata";
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
 import { useState, useEffect } from "react";
 import NumberFlow from "@number-flow/react";
+import Chart from "@/utils/chart";
 
 function App() {
   function ExtraData({ title, value }) {
@@ -90,36 +87,8 @@ function App() {
           </div>
         </div>
 
-        <div>
-          <ChartContainer
-            config={{
-              value: {
-                label: "Temperature",
-                color: "hsl(var(--chart-1))",
-              },
-            }}
-            className="h-[200px]"
-          >
-            <AreaChart data={chartData} margin={{ right: 10, left: 10 }}>
-              <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="time"
-                tickLine={false}
-                axisLine={false}
-                tickMargin={2}
-                tickFormatter={(value) =>
-                  value === "Now" ? value : `${value}`
-                }
-              />
-              <Area
-                type="linear"
-                dataKey="value"
-                fill="var(--color-value)"
-                fillOpacity={0.5}
-                stroke="var(--color-value)"
-              />
-            </AreaChart>
-          </ChartContainer>
+        <div className="mt-10">
+          <Chart />
 
           <div className="grid grid-cols-3 px-8 py-7 gap-7 sm:grid-cols-4">
             <ExtraData title="Feels like" value="30°" />
