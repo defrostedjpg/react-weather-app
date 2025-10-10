@@ -1,12 +1,44 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React-Weather-App
 
-Currently, two official plugins are available:
+A barebones weather app made with Shadcn and React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I may update this repo in the future for desktop compatibility
 
-## Expanding the ESLint configuration
+![Weather app preview](https://i.imgur.com/mqcGd44.png)
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install the app with Git clone
+
+`git clone https://github.com/defrostedjpg/react-weather-app.git`
+
+Install npm modules
+
+`cd react-weather-app`
+
+`npm install`
+
+Run the project locally
+
+`npm run dev`
+## Libraries & Plugins
+
+- React.js
+- Tailwind CSS
+- Recharts
+- Shadcn
+
+
+## Lessons Learned
+
+I became more familiar with React.js and working with Shadcn components with the help of generative AI and learned that some component libraries aren't compatible with Tailwind CSS.
+
+I also learnt how to modify and implement Shadcn charts.
+
+## Acknowledgements
+
+ - [React.js](https://react.dev/)
+ - [ReadMe.so](https://readme.so/)
+ - [Shadcn](https://ui.shadcn.com/)
+ - [Recharts Documentation](https://recharts.org/en-US/api)
+
