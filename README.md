@@ -5,6 +5,8 @@ A barebones weather app made with Shadcn and React
 
 I may update this repo in the future for desktop compatibility
 
+Live Demo: https://defrostedjpg.github.io/react-weather-app/
+
 ![Weather app preview](https://i.imgur.com/mqcGd44.png)
 ## Installation
 
