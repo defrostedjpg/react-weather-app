@@ -87,8 +87,10 @@ function App() {
           </div>
         </div>
 
-        <div className="mt-10">
-          <Chart />
+        <div className=" pt-10">
+          <div className="w-full flex justify-center">
+            <Chart />
+          </div>
 
           <div className="grid grid-cols-3 px-8 py-7 gap-7 sm:grid-cols-4">
             <ExtraData title="Feels like" value="30°" />

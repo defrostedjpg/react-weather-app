@@ -1,6 +1,6 @@
 'use client';
 
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import { chartData } from "@/lib/chartdata";
 import {
   ChartContainer,
@@ -11,32 +11,38 @@ import {
 const chartConfig = {
   value: {
     label: "Temperature",
-    color: "var(--chart-1)",
+    color: "var(--chart-4)",
   }
 };
 
 export default function Chart() {
   return (
-    <ChartContainer className="h-50 mx-auto" config={chartConfig}>
+    <ChartContainer className="h-50 w-3/4 mx-auto" config={chartConfig}>
       <AreaChart
         accessibilityLayer
         data={chartData}
         margin={{
-          left: 10,
-          right: 10,
+          left: 20,
+          right: 20,
+          top: 20,
+          bottom: 20,
         }}
       >
-        <CartesianGrid vertical={false} />
+        <CartesianGrid vertical={true} horizontal={false} />
         <XAxis
           dataKey="time"
           tickLine={false}
           axisLine={false}
-          tickMargin={2}
+          tickMargin={10}
           tickFormatter={(value) => value}
-          padding={{
-            left: 5,
-            right: 5,
-          }}
+        />
+        <YAxis
+          width={0}
+          domain={["dataMin-10", "dataMax"]}
+          type="number"
+          tick={false}
+          axisLine={false}
+          tickLine={false}
         />
         <ChartTooltip
           cursor={false}
